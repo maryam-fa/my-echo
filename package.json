@@ -22,7 +22,11 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@clerk/shared"
+      "@clerk/shared",
+      "@sentry/cli",
+      "core-js-pure",
+      "esbuild",
+      "sharp"
     ]
   }
 }
