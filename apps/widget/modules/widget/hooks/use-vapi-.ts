@@ -15,7 +15,7 @@ export const useVapi = () => {
     const [transcript, setTranscript] = useState<TanscriptMessage[]>([]);
     useEffect(() => { 
         //Only for testing the Vapi API, otherwise custumers will provide their own API keys.
-        const vapiInstance = new Vapi("ab7d9c3b-6050-4454-8731-03439f8578a3");
+        const vapiInstance = new Vapi("");
         setVapi(vapiInstance);
 
         vapiInstance.on("call-start", () => {
@@ -64,7 +64,7 @@ export const useVapi = () => {
         if (vapi) {
         //Only for testing the Vapi API, otherwise custumers will provide their own Assistant IDs
 
-            vapi.start("3b867646-bfc0-40b7-80b9-c62c4a375a57");
+            vapi.start("");
         }
     };
 
