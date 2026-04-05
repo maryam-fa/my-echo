@@ -1,3 +1,4 @@
+declare const process: any;
 import { createClerkClient } from "@clerk/backend";
 import { v } from "convex/values";
 import { action } from "../_generated/server";

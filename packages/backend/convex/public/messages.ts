@@ -4,8 +4,6 @@ import { internal } from "../_generated/api";
 import { ConvexError } from "convex/values";
 import { supportAgent } from "../system/ai/agents/supportAgent";
 import { paginationOptsValidator } from "convex/server";
-import { error } from "console";
-
 export const create = action({
   args: {
     prompt: v.string(),

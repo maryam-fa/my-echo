@@ -5,6 +5,9 @@ import { Select as SelectPrimitive } from "radix-ui"
 
 import { cn } from "@workspace/ui/lib/utils"
 import { IconPlaceholder } from "./icon-placeholder"
+import { CheckIcon, ChevronDownIcon } from "lucide-react";
+import { ChevronUpIcon } from "lucide-react";
+
 
 function Select({
   ...props
@@ -49,16 +52,11 @@ function SelectTrigger({
       )}
       {...props}
     >
-      {children}
+      <span className="flex items-center gap-2">
+        {children}
+      </span>
       <SelectPrimitive.Icon asChild>
-        <IconPlaceholder
-          lucide="ChevronDownIcon"
-          tabler="IconSelector"
-          hugeicons="UnfoldMoreIcon"
-          phosphor="CaretDownIcon"
-          remixicon="RiArrowDownSLine"
-          className="text-muted-foreground pointer-events-none size-4"
-        />
+        <ChevronDownIcon className="size-4 opacity-50 text-muted-foreground pointer-events-none" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
@@ -131,14 +129,7 @@ function SelectItem({
     >
       <span className="pointer-events-none absolute right-2 flex size-4 items-center justify-center">
         <SelectPrimitive.ItemIndicator>
-          <IconPlaceholder
-            lucide="CheckIcon"
-            tabler="IconCheck"
-            hugeicons="Tick02Icon"
-            phosphor="CheckIcon"
-            remixicon="RiCheckLine"
-            className="pointer-events-none"
-          />
+          <CheckIcon className="size-4" />
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>

@@ -1,3 +1,4 @@
+declare const process: any;
 import { AuthConfig } from "convex/server";
 
 export default {
