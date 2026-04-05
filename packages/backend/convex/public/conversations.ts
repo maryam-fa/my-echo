@@ -11,9 +11,9 @@ export const getMany = query ({
     paginationOpts: paginationOptsValidator,
   },
   handler: async (ctx, args) => {
-    const session = await ctx.db.get(args.contactSessionId);
+    const contactSession = await ctx.db.get(args.contactSessionId);
 
-    if (!session || session.expiresAt < Date.now()) {
+    if (!contactSession || contactSession.expiresAt < Date.now()) {
       throw new ConvexError({
         code: "UNAUTHORIZED",
         message: "Invalid session",

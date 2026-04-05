@@ -6,7 +6,7 @@ import { DashboardSidebar } from "@/modules/dashboard/ui/components/dashboard-si
 
 export const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
     const cookieStore = await cookies();
-    const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
+    const defaultOpen = cookieStore.get("SIDEBAR_COOKIE_NAME")?.value === "true";
     return (
         <AuthGuard>
             <OrganizationGuard>
