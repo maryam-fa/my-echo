@@ -6,6 +6,10 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
 :root {
   --background: oklch(1 0 0);
