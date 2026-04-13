@@ -37,7 +37,7 @@ importers:
         version: 6.38.1(next@16.1.6(@babel/core@7.29.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@convex-dev/agent':
         specifier: 0.1.16
-        version: 0.1.16(ai@4.3.19(react@19.2.4)(zod@3.25.76))(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.16(ai@6.0.158(zod@3.25.76))(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@hookform/resolvers':
         specifier: 5.2.2
         version: 5.2.2(react-hook-form@7.71.2(react@19.2.4))
@@ -140,7 +140,7 @@ importers:
     dependencies:
       '@convex-dev/agent':
         specifier: 0.1.16
-        version: 0.1.16(ai@4.3.19(react@19.2.4)(zod@3.25.76))(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        version: 0.1.16(ai@6.0.158(zod@3.25.76))(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@hookform/resolvers':
         specifier: 5.2.2
         version: 5.2.2(react-hook-form@7.71.2(react@19.2.4))
@@ -217,6 +217,9 @@ importers:
 
   packages/backend:
     dependencies:
+      '@ai-sdk/google':
+        specifier: ^3.0.62
+        version: 3.0.62(zod@3.25.76)
       '@ai-sdk/groq':
         specifier: ^0.0.1
         version: 0.0.1(zod@3.25.76)
@@ -226,6 +229,9 @@ importers:
       '@convex-dev/agent':
         specifier: ^0.1.18
         version: 0.1.18(ai@4.3.19(react@19.2.4)(zod@3.25.76))(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@6.0.2)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)
+      '@convex-dev/rag':
+        specifier: ^0.7.2
+        version: 0.7.2(@convex-dev/workpool@0.3.2(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@6.0.2)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)))(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@6.0.2)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(zod@3.25.76)
       ai:
         specifier: ^4.3.19
         version: 4.3.19(react@19.2.4)(zod@3.25.76)
@@ -401,6 +407,18 @@ importers:
 
 packages:
 
+  '@ai-sdk/gateway@3.0.95':
+    resolution: {integrity: sha512-ZmUNNbZl3V42xwQzPaNUi+s8eqR2lnrxf0bvB6YbLXpLjHYv0k2Y78t12cNOfY0bxGeuVVTLyk856uLuQIuXEQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
+  '@ai-sdk/google@3.0.62':
+    resolution: {integrity: sha512-cC9HAjR5WZxjqGyEJrJqFTlVqyPE9UOFmmGdf5dINaimgfPmzqXYN1qTYEJ+1knbyTVsNMub0KAF5SOqqtO8IQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
   '@ai-sdk/groq@0.0.1':
     resolution: {integrity: sha512-M8XHUovs2UqOx6xlhABXXCGlzbgeErSyIwvH1LQeDl3Z2CbSSgvttc0k6irm4J7ViuULE5XcIDQurXijIePWqQ==}
     engines: {node: '>=18'}
@@ -422,12 +440,22 @@ packages:
     peerDependencies:
       zod: ^3.23.8
 
+  '@ai-sdk/provider-utils@4.0.23':
+    resolution: {integrity: sha512-z8GlDaCmRSDlqkMF2f4/RFgWxdarvIbyuk+m6WXT1LYgsnGiXRJGTD2Z1+SDl3LqtFuRtGX1aghYvQLoHL/9pg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
   '@ai-sdk/provider@0.0.24':
     resolution: {integrity: sha512-XMsNGJdGO+L0cxhhegtqZ8+T6nn4EoShS819OvCgI2kLbYTIvk0GWFGD0AXJmxkxs3DrpsJxKAFukFR7bvTkgQ==}
     engines: {node: '>=18'}
 
   '@ai-sdk/provider@1.1.3':
     resolution: {integrity: sha512-qZMxYJ0qqX/RfnuIaab+zp8UAeJn/ygXXAffR5I4N0n1IrvA6qBsjc8hXLmBiMV2zoXlifkacF7sEFnYnjBcqg==}
+    engines: {node: '>=18'}
+
+  '@ai-sdk/provider@3.0.8':
+    resolution: {integrity: sha512-oGMAgGoQdBXbZqNG0Ze56CHjDZ1IDYOwGYxYjO5KLSlz5HiNQ9udIXsPZ61VWaHGZ5XW/jyjmr6t2xz2jGVwbQ==}
     engines: {node: '>=18'}
 
   '@ai-sdk/react@1.2.12':
@@ -624,6 +652,19 @@ packages:
     peerDependenciesMeta:
       react:
         optional: true
+
+  '@convex-dev/rag@0.7.2':
+    resolution: {integrity: sha512-LuwiJdnE6twrM+5tVldmOpZqmR6eIQpMroCOyXWTNE7XDfqWz52GKDenraLG95xNRbn5wcxg8mkOrZIUUgwGDg==}
+    peerDependencies:
+      '@convex-dev/workpool': ^0.3.0
+      convex: ^1.24.8
+      convex-helpers: ^0.1.94
+
+  '@convex-dev/workpool@0.3.2':
+    resolution: {integrity: sha512-jNPBHLCmZQXaztbBntZgIoM8JhKDmGwaIezZS/zPmX74PzON0Fgysgd9u+NOjJ04Dx2pN8ppBH9ElpsKxCOBpA==}
+    peerDependencies:
+      convex: ^1.31.7
+      convex-helpers: ^0.1.94
 
   '@daily-co/daily-js@0.85.0':
     resolution: {integrity: sha512-lpl111ZWNTUWDnwYcPuNi9PGJPbLCeCw6LzmEY40nG0hv1jg5JLVW8Rq3Cj/+lOCP6W6h4PXm211ss0FFnxITQ==}
@@ -2979,6 +3020,10 @@ packages:
     resolution: {integrity: sha512-mT4DjApi0/0+EK77h2xOLq3qVBa7rv3JNQ+gFWuhFE4YdGYxI51+fn8bQI9N535+zU/Z4jFKXotdBHQJ3filHA==}
     engines: {node: '>=18.0.0'}
 
+  '@vercel/oidc@3.1.0':
+    resolution: {integrity: sha512-Fw28YZpRnA3cAHHDlkt7xQHiJ0fcL+NRcIqsocZQUSmbzeIKRpwttJjik5ZGanXP+vlA4SbTg+AbA3bP363l+w==}
+    engines: {node: '>= 20'}
+
   '@webassemblyjs/ast@1.14.1':
     resolution: {integrity: sha512-nuBEDgQfm1ccRp/8bCQrx1frohyufl4JlbMMZ4P1wpeOfDhF6FQkxZJ1b/e+PLwr6X1Nhw6OLme5usuBWYBvuQ==}
 
@@ -3068,6 +3113,12 @@ packages:
     peerDependenciesMeta:
       react:
         optional: true
+
+  ai@6.0.158:
+    resolution: {integrity: sha512-gLTp1UXFtMqKUi3XHs33K7UFglbvojkxF/aq337TxnLGOhHIW9+GyP2jwW4hYX87f1es+wId3VQoPRRu9zEStQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
 
   ajv-formats@2.1.1:
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
@@ -3690,6 +3741,10 @@ packages:
   eventsource-parser@1.1.2:
     resolution: {integrity: sha512-v0eOBUbiaFojBu2s2NPBfYUoRR9GjcDNvCXVaqEf5vVfpIAh9f8RCo4vXTP8c63QRKCFwoLpMpTdPwwhEKVgzA==}
     engines: {node: '>=14.18'}
+
+  eventsource-parser@3.0.6:
+    resolution: {integrity: sha512-Vo1ab+QXPzZ4tCa8SwIHJFaSzy4R6SHf7BY79rFBDf0idraZWAkYrDjDj8uWaSm3S2TK+hJ7/t1CEmZ7jXw+pg==}
+    engines: {node: '>=18.0.0'}
 
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
@@ -5539,6 +5594,19 @@ packages:
 
 snapshots:
 
+  '@ai-sdk/gateway@3.0.95(zod@3.25.76)':
+    dependencies:
+      '@ai-sdk/provider': 3.0.8
+      '@ai-sdk/provider-utils': 4.0.23(zod@3.25.76)
+      '@vercel/oidc': 3.1.0
+      zod: 3.25.76
+
+  '@ai-sdk/google@3.0.62(zod@3.25.76)':
+    dependencies:
+      '@ai-sdk/provider': 3.0.8
+      '@ai-sdk/provider-utils': 4.0.23(zod@3.25.76)
+      zod: 3.25.76
+
   '@ai-sdk/groq@0.0.1(zod@3.25.76)':
     dependencies:
       '@ai-sdk/provider': 0.0.24
@@ -5561,11 +5629,22 @@ snapshots:
       secure-json-parse: 2.7.0
       zod: 3.25.76
 
+  '@ai-sdk/provider-utils@4.0.23(zod@3.25.76)':
+    dependencies:
+      '@ai-sdk/provider': 3.0.8
+      '@standard-schema/spec': 1.1.0
+      eventsource-parser: 3.0.6
+      zod: 3.25.76
+
   '@ai-sdk/provider@0.0.24':
     dependencies:
       json-schema: 0.4.0
 
   '@ai-sdk/provider@1.1.3':
+    dependencies:
+      json-schema: 0.4.0
+
+  '@ai-sdk/provider@3.0.8':
     dependencies:
       json-schema: 0.4.0
 
@@ -5796,9 +5875,9 @@ snapshots:
       - react
       - react-dom
 
-  '@convex-dev/agent@0.1.16(ai@4.3.19(react@19.2.4)(zod@3.25.76))(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)':
+  '@convex-dev/agent@0.1.16(ai@6.0.158(zod@3.25.76))(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)':
     dependencies:
-      ai: 4.3.19(react@19.2.4)(zod@3.25.76)
+      ai: 6.0.158(zod@3.25.76)
       convex: 1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       convex-helpers: 0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(zod@3.25.76)
     optionalDependencies:
@@ -5811,6 +5890,20 @@ snapshots:
       convex-helpers: 0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@6.0.2)(zod@3.25.76)
     optionalDependencies:
       react: 19.2.4
+
+  '@convex-dev/rag@0.7.2(@convex-dev/workpool@0.3.2(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@6.0.2)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)))(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@6.0.2)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(zod@3.25.76)':
+    dependencies:
+      '@convex-dev/workpool': 0.3.2(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@6.0.2)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))
+      ai: 6.0.158(zod@3.25.76)
+      convex: 1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+      convex-helpers: 0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@6.0.2)(zod@3.25.76)
+    transitivePeerDependencies:
+      - zod
+
+  '@convex-dev/workpool@0.3.2(convex-helpers@0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@6.0.2)(zod@3.25.76))(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))':
+    dependencies:
+      convex: 1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+      convex-helpers: 0.1.114(@standard-schema/spec@1.1.0)(convex@1.32.0(@clerk/clerk-react@5.61.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4))(react@19.2.4)(typescript@6.0.2)(zod@3.25.76)
 
   '@daily-co/daily-js@0.85.0':
     dependencies:
@@ -7812,8 +7905,7 @@ snapshots:
 
   '@stablelib/base64@1.0.1': {}
 
-  '@standard-schema/spec@1.1.0':
-    optional: true
+  '@standard-schema/spec@1.1.0': {}
 
   '@standard-schema/utils@0.3.0': {}
 
@@ -8134,6 +8226,8 @@ snapshots:
       '@daily-co/daily-js': 0.85.0
       events: 3.3.0
 
+  '@vercel/oidc@3.1.0': {}
+
   '@webassemblyjs/ast@1.14.1':
     dependencies:
       '@webassemblyjs/helper-numbers': 1.13.2
@@ -8250,6 +8344,14 @@ snapshots:
       zod: 3.25.76
     optionalDependencies:
       react: 19.2.4
+
+  ai@6.0.158(zod@3.25.76):
+    dependencies:
+      '@ai-sdk/gateway': 3.0.95(zod@3.25.76)
+      '@ai-sdk/provider': 3.0.8
+      '@ai-sdk/provider-utils': 4.0.23(zod@3.25.76)
+      '@opentelemetry/api': 1.9.0
+      zod: 3.25.76
 
   ajv-formats@2.1.1(ajv@8.18.0):
     optionalDependencies:
@@ -9006,6 +9108,8 @@ snapshots:
   events@3.3.0: {}
 
   eventsource-parser@1.1.2: {}
+
+  eventsource-parser@3.0.6: {}
 
   extend@3.0.2: {}
 
