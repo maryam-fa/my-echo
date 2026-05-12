@@ -6,6 +6,7 @@ import { supportAgent } from "../system/ai/agents/supportAgent";
 import { paginationOptsValidator } from "convex/server";
 import { generateText } from "ai";
 import { groq } from "@ai-sdk/groq";
+import { OPERATOR_MESSAGE_ENHANCEMENT_PROMPT } from "../system/ai/constants";
 
 export const enhanceResponse = action({
   args: {
@@ -34,8 +35,8 @@ export const enhanceResponse = action({
       messages: [
         {
           role: "system",
-          content:
-            "Rewrite the operator's message to be professional and concise. Keep it natural for a human-to-human chat. Output ONLY the rewritten text. No introductions, no 'I can help with that', and no conversational filler.",
+          content: OPERATOR_MESSAGE_ENHANCEMENT_PROMPT,
+            
         },
         {
           role: "user",
