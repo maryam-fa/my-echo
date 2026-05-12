@@ -114,7 +114,7 @@ export const WidgetChatScreen = () => {
                   <AIMessage from={message.role == "user" ? "user" : "assistant"} key={message.id}>
                      <AIMessageContent>
                       <AIResponse>
-                        {message.content}
+                        {(message as any).content}
                       </AIResponse>
                      </AIMessageContent>
                      {message.role === "assistant" && (

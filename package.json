@@ -21,6 +21,9 @@
     "node": ">=20"
   },
   "pnpm": {
+    "overrides": {
+      "ai": "4.3.16"
+    },
     "onlyBuiltDependencies": [
       "@clerk/shared",
       "@sentry/cli",

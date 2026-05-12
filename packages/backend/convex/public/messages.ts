@@ -1,12 +1,12 @@
 import { v } from "convex/values";
 import { action, query } from "../_generated/server";
-import { components, internal } from "../_generated/api";
+import { internal } from "../_generated/api";
 import { ConvexError } from "convex/values";
 import { supportAgent } from "../system/ai/agents/supportAgent";
 import { paginationOptsValidator } from "convex/server";
 import { resolveConversation } from "../system/ai/tools/resolveConversation";
 import { escalateConversation } from "../system/ai/tools/escalateConversation copy";
-import { saveMessage } from "@convex-dev/agent";
+
 export const create = action({
   args: {
     prompt: v.string(),
@@ -52,58 +52,55 @@ export const create = action({
       });
     }
 
-    // TODO: Implement subscription 
+    // 4. Generate AI response or save message
+    const shouldTriggerAgent = conversation.status === "unresolved";
 
-    // 4. Generate AI response
-    const shouldTriggerAgent = 
-      conversation.status === "unresolved";
-      if (shouldTriggerAgent) {
-        await supportAgent.generateText(
-          ctx,
-          { threadId: args.threadId },
-          {
-            prompt: args.prompt,
-            tools: {
-              resolveConversation,
-              escalateConversation,
-          }
-          },
-        )
-      } else {
-        await saveMessage(ctx, components.agent, {
-          threadId: args.threadId,
+    if (shouldTriggerAgent) {
+      await supportAgent.generateText(
+        ctx,
+        { threadId: args.threadId },
+        {
           prompt: args.prompt,
-        });
-      }
-    
+          tools: {
+            resolveConversation,
+            escalateConversation,
+          },
+        }
+      );
+    } else {
+      // saveMessage ki jagah supportAgent.saveMessage use karo
+      await supportAgent.saveMessage(ctx, {
+        threadId: args.threadId,
+        message: {
+          role: "user",
+          content: args.prompt,
+        },
+      });
+    }
   },
 });
 
-
 export const getMany = query({
-   args: {
+  args: {
     threadId: v.string(),
     paginationOpts: v.optional(paginationOptsValidator),
     contactSessionId: v.id("contactSessions"),
+  },
+  handler: async (ctx, args) => {
+    const contactSession = await ctx.db.get(args.contactSessionId);
 
-   },
-   handler: async (ctx, args) => {
-     const contactSession = await ctx.db.get(args.contactSessionId);
-     
-       if (!contactSession || contactSession.expiresAt < Date.now()) {
-           throw new ConvexError({
-              code: "UNAUTHORIZED",
-              message: "Invalid session",
-           });
-     
-        }
+    if (!contactSession || contactSession.expiresAt < Date.now()) {
+      throw new ConvexError({
+        code: "UNAUTHORIZED",
+        message: "Invalid session",
+      });
+    }
 
-       const paginated = await supportAgent.listMessages(ctx, {
-          threadId: args.threadId,
-          paginationOpts: args.paginationOpts!,
+    const paginated = await supportAgent.listMessages(ctx, {
+      threadId: args.threadId,
+      paginationOpts: args.paginationOpts!,
+    });
 
-        });
-
-       return paginated;
-    },
+    return paginated;
+  },
 });

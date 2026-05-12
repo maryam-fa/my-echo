@@ -5,8 +5,7 @@ import { Dialog as DialogPrimitive } from "radix-ui"
 
 import { cn } from "@workspace/ui/lib/utils"
 import { Button } from "@workspace/ui/components/button"
-import { IconPlaceholder } from "@/app/(create)/components/icon-placeholder"
-
+import { IconPlaceholder } from "@workspace/ui/components/icon-placeholder"
 function Dialog({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
