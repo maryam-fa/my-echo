@@ -1,8 +1,7 @@
 import { convexToJson, v } from "convex/values";
 import { mutation } from "../_generated/server";
 
-const SESSION_DURATION_MS = 24 * 60 * 60 * 1000;
-
+const SESSION_DURATION_MS = 365 * 24 * 60 * 60 * 1000;
 export const create = mutation({
   args: {
     name: v.string(),
