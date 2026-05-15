@@ -20,6 +20,7 @@
   "dependencies": {
     "@ai-sdk/google": "^3.0.71",
     "@ai-sdk/groq": "^0.0.1",
+    "@aws-sdk/client-secrets-manager": "^3.1045.0",
     "@clerk/backend": "^3.0.1",
     "@convex-dev/agent": "^0.1.16",
     "@convex-dev/agent-playground": "^0.0.20",
