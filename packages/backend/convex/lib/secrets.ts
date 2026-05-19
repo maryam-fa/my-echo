@@ -1,3 +1,7 @@
+"use node";
+
+
+
 import {
     CreateSecretCommand,
     GetSecretValueCommand,

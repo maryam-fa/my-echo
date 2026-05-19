@@ -28,10 +28,11 @@ export const upsert = mutation({
 
     // TODO: Check for subscription
 
+    // ✅ system/secrets.upsert already plugin bhi create karta hai
     await ctx.scheduler.runAfter(0, internal.system.secrets.upsert, {
       service: args.service,
       organizationId: orgId,
       value: args.value,
-    })
+    });
   },
-})
+});
