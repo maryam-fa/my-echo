@@ -112,16 +112,22 @@ export const create = mutation({
       });
     }
 
+    const widgetSettings = await ctx.db
+      .query("widgetSettings")
+      .withIndex("by_organization_id", (q) => 
+        q.eq("organizationId", args.organizationId),
+      )
+      .unique();
+
     const { threadId } = await supportAgent.createThread(ctx, {
       userId: args.organizationId,
     });
 
-    // saveMessage ki jagah supportAgent.saveMessage use karo
     await supportAgent.saveMessage(ctx, {
       threadId,
       message: {
         role: "assistant",
-        content: "Hello, how can I help you today?",
+        content: widgetSettings?.greetMessage || "Hello, how can I help you today?",
       },
     });
 
