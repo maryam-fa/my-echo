@@ -2,7 +2,7 @@
 
 import { useAtomValue, useSetAtom } from "jotai";
 import { LoaderIcon } from "lucide-react";
-import { contactSessionIdAtomFamily, errorMessageAtom, loadingMessageAtom, organizationIdAtom, screenAtom, widgetSettingsAtom } from "../../atoms/widget-atoms";
+import { contactSessionIdAtomFamily, errorMessageAtom, loadingMessageAtom, organizationIdAtom, screenAtom, vapiSecretsAtom, widgetSettingsAtom } from "../../atoms/widget-atoms";
 import { WidgetHeader } from "../components/widget-header";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -21,6 +21,7 @@ export const WidgetLoadingScreen = ({organizationId}: { organizationId: string |
   const setErrorMessage = useSetAtom(errorMessageAtom);
   const setScreen = useSetAtom(screenAtom);
   const setLoadingMessage = useSetAtom(loadingMessageAtom);
+  const setVapiSecrets = useSetAtom(vapiSecretsAtom);
 
   const contactSessionId = useAtomValue(contactSessionIdAtomFamily(organizationId || ""));
 
@@ -110,7 +111,7 @@ export const WidgetLoadingScreen = ({organizationId}: { organizationId: string |
 
     if (widgetSettings !== undefined && organizationId) {
       setWidgetSettings(widgetSettings);
-      setStep("done");
+      setStep("vapi");
     }
   },   [
     step, 
@@ -118,6 +119,42 @@ export const WidgetLoadingScreen = ({organizationId}: { organizationId: string |
     setStep, 
     setWidgetSettings, 
     setLoadingMessage
+  ]);
+
+  // step 4
+  // Step 4: Load Vapi secrets
+  const getVapiSecrets = useAction(api.public.secrets.getVapiSecrets);
+
+  useEffect(() => {
+    if (step !== "vapi") {
+      return;
+    }
+
+    if (!organizationId) {
+      setErrorMessage("Organization ID is required");
+      setScreen("errors");
+      return;
+    }
+
+
+    setLoadingMessage("Loading voice features...");
+  
+    getVapiSecrets({ organizationId })
+      .then((secrets) => {
+        setVapiSecrets(secrets);
+        setStep("done");
+      })
+      .catch(() => {
+        setVapiSecrets(null);
+        setStep("done");
+      });
+  }, [
+    step,
+    organizationId,
+    getVapiSecrets,
+    setVapiSecrets,
+    setLoadingMessage,
+    setStep,
   ]);
   
 
