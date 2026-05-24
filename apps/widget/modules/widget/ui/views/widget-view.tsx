@@ -9,6 +9,7 @@ import { WidgetSelectionScreen } from "../screens/widget-selection-screen";
 import { WidgetChatScreen } from "../screens/widget-chat-screen";
 import { WidgetInboxScreen } from "../screens/widget-inbox-screen";
 import { WidgetVoiceScreen } from "../screens/widget-voice-screen";
+import { WidgetContactScreen } from "../screens/widget-contact-screen";
 
 
 interface Props {
@@ -26,7 +27,7 @@ export const WidgetView = ({ organizationId }: Props) => {
         inbox: <WidgetInboxScreen />,
         selection: <WidgetSelectionScreen />,
         chat: <WidgetChatScreen />,
-        contact: <p>TODO: Contact</p>,
+        contact: <WidgetContactScreen />,
 
         
     }
