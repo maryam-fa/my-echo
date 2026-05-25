@@ -31,5 +31,8 @@
       "esbuild",
       "sharp"
     ]
+  },
+  "dependencies": {
+    "react-resizable-panels": "^4.11.2"
   }
 }
