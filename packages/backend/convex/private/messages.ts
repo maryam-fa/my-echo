@@ -1,6 +1,6 @@
 import { v } from "convex/values";
 import { action, mutation, query } from "../_generated/server";
-import { components } from "../_generated/api";
+import { components, internal } from "../_generated/api";
 import { ConvexError } from "convex/values";
 import { supportAgent } from "../system/ai/agents/supportAgent";
 import { paginationOptsValidator } from "convex/server";
@@ -29,6 +29,23 @@ export const enhanceResponse = action({
         message: "Organization not found",
       });
     }
+
+    const subscription = await ctx.runQuery(
+      internal.system.subscriptions.getByOrganizationId,
+      {
+        organizationId: orgId,
+      },
+    );
+
+    if (subscription?.status !== "active") {
+      throw new ConvexError({
+        code: "BAD_REQUEST",
+        message: "Missing subscription"
+      });
+    }
+   
+
+
 
     const response = await generateText({
       model: groq("llama-3.3-70b-versatile"),
