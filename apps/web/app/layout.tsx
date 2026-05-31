@@ -1,7 +1,7 @@
 import { ClerkProvider } from '@clerk/nextjs'
-
 import { Geist, Geist_Mono } from "next/font/google"
-import { Toaster } from "@workspace/ui/components/sonner";
+import { Toaster } from "@workspace/ui/components/sonner"
+import Script from "next/script"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
@@ -36,6 +36,10 @@ export default function RootLayout({
             {children}
           </Providers>
         </ClerkProvider>
+        <Script 
+          src="https://my-echo-embed.vercel.app/widget.iife.js"
+          data-organization-id="org_3CqICqECN7QrRrHM9HofP9z8v0x"
+        />
       </body>
     </html>
   )
