@@ -38,7 +38,7 @@ function DialogOverlay({
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
       className={cn(
-        "data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs",
+        "data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-[1px]",
         className
       )}
       {...props}
@@ -74,10 +74,10 @@ function DialogContent({
               size="icon-sm"
             >
               <IconPlaceholder
-                lucide="XIcon"
+                lucide="X"
                 tabler="IconX"
                 hugeicons="Cancel01Icon"
-                phosphor="XIcon"
+                phosphor="X"
                 remixicon="RiCloseLine"
               />
               <span className="sr-only">Close</span>
